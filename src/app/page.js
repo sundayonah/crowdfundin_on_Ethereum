@@ -1,10 +1,10 @@
 import React from 'react'
-import { NavBar } from './Components'
 
 const page = () => {
   return (
     <div>
-      <NavBar />
+         <h1 className="text-3xl font-bold underline">hello</h1>
+
     </div>
   )
 }
