@@ -6,12 +6,13 @@ const Footer = () => {
   const usefullLink = ['Home', 'About Us', 'Contact Bio'];
 
 
-  return <footer className="text-center text-white backgroundMain lg:text-left">
+  return (
+  <footer className="text-center text-white backgroundMain lg:text-left">
     <div className="mx-6 py-10 text-center md:text-left">
       <div className="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
         <div className="">
           <h6 className="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
-             Krypto King
+            xhunTeq..
           </h6>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -55,7 +56,7 @@ const Footer = () => {
       <span>© 2023 Copyright: </span>
       <a className="font-semibold" href="https://onahsunday.vercel.app/">xhunTeq..</a>
     </div>
-    </footer>;
-};
+    </footer>
+)};
 
 export default Footer;
