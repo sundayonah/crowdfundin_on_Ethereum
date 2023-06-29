@@ -26,7 +26,7 @@ function createCampaign(
 ) 
 public returns (uint256) {
     Campaign storage campaign = campaigns[numberOfCampaigns];
-    require(campaign.deadline < block.timestamp, "The Deadline should be a date in the future");
+    require(campaign.deadline > block.timestamp, "The Deadline should be a date in the future");
 
     campaign.owner = _owner;
     campaign.title = _title;

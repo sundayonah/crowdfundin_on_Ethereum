@@ -61,6 +61,8 @@ const fetchContract = (signerOrProvider) => new ethers.Contract(
                 ),
                 pId: i,
             }));
+              console.log(parsedCampaigns)
+
             return parsedCampaigns;
         };
 
@@ -76,7 +78,11 @@ const fetchContract = (signerOrProvider) => new ethers.Contract(
             const currentUser = accounts[0];
             console.log(currentUser)
             const filterCampaigns = allCampaigns.filter((campaign) => 
-            campaign.owner === '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266'); //currentUser
+            // campaign.owner === currentUser); //currentUser
+            campaign.owner === '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266'
+            ); //currentUser
+
+            console.log(filterCampaigns)
 
             const userData = filterCampaigns.map((campaign, i) =>({
                 owner: campaign.owner,

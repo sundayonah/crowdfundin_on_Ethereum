@@ -13,10 +13,10 @@ const Page = () => {
     getDonations,
     } = useContext(CrowdFundingContext);
 
-const [allCampaign, setAllCampaign] = useState();
-const [userCampaign, setUserCampaign] = useState();
-const [openModal, setOpenModal] = useState();
-const [donateCampaign, setDonateCampaign] = useState();
+    const [openModal, setOpenModal] = useState();
+    const [allCampaign, setAllCampaign] = useState();
+    const [userCampaign, setUserCampaign] = useState();
+    const [donateCampaign, setDonateCampaign] = useState();
 
 useEffect(() => {
 const getCampaignData = getCampaigns();
@@ -37,7 +37,7 @@ console.log(donateCampaign);
       <Hero 
       titleData={titleData}
       createCampaign={createCampaign}
-        />  
+      />  
 
       <Card 
       title="All Listed Campaigns"
