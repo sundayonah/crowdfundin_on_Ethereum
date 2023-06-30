@@ -14,7 +14,6 @@ const Hero = ({ titleData, createCampaign }) => {
     e.preventDefault();
     try {
       const data = await createCampaign(campaign);
-      console.log(data)
     } catch (error) {
       console.log(error);
     }

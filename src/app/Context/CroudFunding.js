@@ -95,6 +95,7 @@ const fetchContract = (signerOrProvider) => new ethers.Contract(
                 ),
                 pId: i,
             }));
+            // console.log(userData.length)
             return userData;
         };
 
