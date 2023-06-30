@@ -3,8 +3,6 @@ import React from "react";
 
 const Card = ({allCampaign, setOpenModal, setDonate, title}) => {
 
-  console.log(allCampaign)
-
   const daysLeft = (deadline) => {
     const difference = new Date(deadline).getTime() - Date.now();
     const remainigDays = difference / (1000 * 60 * 60 * 24);
