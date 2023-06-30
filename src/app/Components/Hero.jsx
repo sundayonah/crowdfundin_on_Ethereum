@@ -18,8 +18,7 @@ const Hero = ({ titleData, createCampaign }) => {
     } catch (error) {
       console.log(error);
     }
-  };
-
+  }
   return (
     <div className="relative">
       <span className="coverLine"></span>
@@ -56,6 +55,7 @@ const Hero = ({ titleData, createCampaign }) => {
                   Campaign
                 </h3>
                 <form>
+
                   {/* TITLE */}
                   <div className="mb-1 sm:mb-2">
                     <label htmlFor="firstName" className="inline-block mb-1 font-medium">
@@ -70,16 +70,16 @@ const Hero = ({ titleData, createCampaign }) => {
                       }
                       placeholder="title"
                       required
+                      type="text"
                       className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
                       id="firstName"
                       name="firstName"
-                      type="text"
                     />
                   </div>
 
                   {/* DESCRIPTION */}
                   <div className="mb-1 sm:mb-2">
-                    <label htmlFor="lasttName" className="inline-block mmb-1 font-medium">
+                    <label htmlFor="lasttName" className="inline-block mb-1 font-medium">
                       Decription
                     </label>
                     <input
@@ -91,16 +91,16 @@ const Hero = ({ titleData, createCampaign }) => {
                       }
                       placeholder="description"
                       required
+                      type="text"
                       className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
                       id="lastName"
                       name="lastName"
-                      type="text"
                     />
                   </div>
 
                   {/* AMOUNT */}
                   <div className="mb-1 sm:mb-2">
-                    <label htmlFor="email" className="inline-block mmb-1 font-medium">
+                    <label htmlFor="email" className="inline-block mb-1 font-medium">
                       Target Amount
                     </label>
                     <input
@@ -112,18 +112,18 @@ const Hero = ({ titleData, createCampaign }) => {
                       }
                       placeholder="amount"
                       required
+                      type="text"
                       className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border
                        border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 
                        focus:outline-none focus:shadow-outline"
                       id="email"
                       name="email"
-                      type="text"
                     />
                   </div>
 
                   {/* deadline */}
                   <div className="mb-1 sm:mb-2">
-                    <label htmlFor="email" className="inline-block mmb-1 font-medium">
+                    <label htmlFor="email" className="inline-block mb-1 font-medium">
                       Target Deadline
                     </label>
                     <input
@@ -135,19 +135,19 @@ const Hero = ({ titleData, createCampaign }) => {
                       }
                       placeholder="Date"
                       required
+                      type="date"
                       className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border
                        border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 
                        focus:outline-none focus:shadow-outline"
                       id="email"
                       name="email"
-                      type="date"
                     />
                   </div>
 
                   {/* button */}
                   <div className="mt-4 mb-2 sm:mb-4">
                     <button
-                      onClick={() => creatNewCapaingn()}
+                      onClick={(e) => creatNewCapaingn(e)}
                       type="submit"
                       className="inline-flex items-center justify-center w-full h-12 px-6 font-medium 
                       tracking-wider transition duration-200 rounded shadow-md bg-deep-purple-accent-400 

@@ -24,7 +24,7 @@ const fetchContract = (signerOrProvider) => new ethers.Contract(
             const connection = await web3Modal.connect();
             const provider = new ethers.providers.Web3Provider(connection);
             const signer = provider.getSigner();
-            const contract = await fetchContract(signer);
+            const contract = fetchContract(signer);
 
             console.log(currentAccount)
             
@@ -33,11 +33,12 @@ const fetchContract = (signerOrProvider) => new ethers.Contract(
                 currentAccount,
                 title,
                 description,
-                ethers.utils.parseUnits(amount, 18),
-                new Date(deadline).getTime() //deadline
+                ethers.utils.parseUnits(amount, 18), // change the i8 to ether
+                new Date(deadline).getTime(), //deadline
                 );
                 await tx.wait();
-                setCurrentAccount(signer.address);
+                console.log(tx)
+                // setCurrentAccount(signer.address);
                 window.location.reload();
                 console.log("contract call success:",tx);
             } catch (error) {
@@ -65,7 +66,7 @@ const fetchContract = (signerOrProvider) => new ethers.Contract(
 
             return parsedCampaigns;
         };
-
+//https://yt3.ggpht.com/GWBmO3kXaARSSrgx1Lpgl_YRtx7lZjtsnXqnqq5tlV9h1AwVe031UsobLaS_UmqwHraP6vtaaZk=s88-c-k-c0x00ffffff-no-rj-mo
 
         const getUserCampaigns = async () => {
             const provider = new ethers.providers.JsonRpcProvider();
@@ -110,7 +111,7 @@ const fetchContract = (signerOrProvider) => new ethers.Contract(
             value: ethers.utils.parseEther(amount),
             });
             await campaignData.wait();
-            window.location.reload();
+            location.reload();
             return campaignData;
         };
 
@@ -175,7 +176,8 @@ const fetchContract = (signerOrProvider) => new ethers.Contract(
         };
 
         return (
-            <CrowdFundingContext.Provider value = {{
+            <CrowdFundingContext.Provider 
+            value = {{
                 titleData,
                 currentAccount,
                 connectWallet,
