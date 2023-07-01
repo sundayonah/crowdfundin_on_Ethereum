@@ -80,8 +80,7 @@ const fetchContract = (signerOrProvider) => new ethers.Contract(
             console.log(currentUser)
             const filterCampaigns = allCampaigns.filter((campaign) => 
             // campaign.owner === currentUser); //currentUser
-            campaign.owner === '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266'
-            ); //currentUser
+            campaign.owner === '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266'); //currentUser
 
             console.log(filterCampaigns)
 
@@ -144,6 +143,7 @@ const fetchContract = (signerOrProvider) => new ethers.Contract(
                 const accounts = await window.ethereum.request({
                     method: 'eth_accounts',
                 });
+                console.log(accounts)
                 if (accounts.length) {
                     setCurrentAccount(accounts[0]);
                 } else {

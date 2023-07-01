@@ -8,7 +8,7 @@ const Page = () => {
     titleData,
     getCampaigns, 
     createCampaign,
-     donate,
+    donate,
     getUserCampaigns,
     getDonations,
     } = useContext(CrowdFundingContext);
@@ -26,11 +26,10 @@ return async () => {
   const userData = await userCampaignData;
   setAllCampaign(allData);
   setUserCampaign(userData);
-}
-},[])
+  console.log(allData)
+};
+},[getCampaigns, getUserCampaigns])
 
-
-console.log(donateCampaign);
 
   return (
     <>

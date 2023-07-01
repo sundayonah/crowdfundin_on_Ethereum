@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 const PopUp = ({ setOpenModal, donate, donateFunction, getDonations}) => {
   const [amount, setAmount] = useState('');
-  const [allDonationData, setAllDonationData] = useState('');
+  const [allDonationData, setAllDonationData] = useState([]);
 
   const createDonation = async () => {
     try {
@@ -14,23 +14,21 @@ const PopUp = ({ setOpenModal, donate, donateFunction, getDonations}) => {
       
     }
   }
-
   useEffect(() => {
     const donationsListData = getDonations(donate.pId);
     return async () => {
       const donationData = await donationsListData;
       setAllDonationData(donationData);
     };
-  }, [])
+  }, [donate.pId, getDonations])
   
-
   return (
     <>
     <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed 
     inset-0 z-50 outline-none focus:outline-none">
       <div className="relative w-auto my-6 mx-auto max-w-3xl">
         {/* content */}
-        <div className="border-0 rounded-lg shadow-lg relative flex flex-cols w-full bg-white 
+        <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white 
         outline-none focus:outline-none">
           {/* header */}
           <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
@@ -80,10 +78,19 @@ const PopUp = ({ setOpenModal, donate, donateFunction, getDonations}) => {
             >
               Close
             </button>
+            <button
+            className="background text-white active:bg-emerald-600 font-bold text-sm px-6 py-3 rounded shadow hover:shadow-lg
+            outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+            type="button"
+            onClick={() => createDonation()}
+            >
+              Donate
+            </button>
           </div>
         </div>
       </div>
     </div>
+    <div className="opacity-25 fixed inset-0 z-40 bg-black" />
     </>
   )
 };
