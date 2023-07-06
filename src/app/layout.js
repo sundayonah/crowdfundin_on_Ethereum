@@ -4,7 +4,6 @@ import "./global.css"
 import { NavBar, Footer } from "./Components"
 import {CrowdFundingProvider} from './Context/CroudFunding';
 
-
 export const metadata = {
   title: 'Crowd-Funding',
   description: 'crowd funding',
@@ -22,4 +21,4 @@ export default function RootLayout({ children }) {
         </body>
     </html>
   )
-}
+};

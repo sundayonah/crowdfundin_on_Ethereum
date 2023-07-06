@@ -25,8 +25,6 @@ const fetchContract = (signerOrProvider) => new ethers.Contract(
             const provider = new ethers.providers.Web3Provider(connection);
             const signer = provider.getSigner();
             const contract = fetchContract(signer);
-
-            console.log(currentAccount)
             
             try {   
                 const tx = await contract.createCampaign(
@@ -40,7 +38,6 @@ const fetchContract = (signerOrProvider) => new ethers.Contract(
                 console.log(tx)
                 // setCurrentAccount(signer.address);
                 window.location.reload();
-                console.log("contract call success:",tx);
             } catch (error) {
                 
                 console.log(" coontract call fail",error);
@@ -66,8 +63,6 @@ const fetchContract = (signerOrProvider) => new ethers.Contract(
 
             return parsedCampaigns;
         };
-//https://yt3.ggpht.com/GWBmO3kXaARSSrgx1Lpgl_YRtx7lZjtsnXqnqq5tlV9h1AwVe031UsobLaS_UmqwHraP6vtaaZk=s88-c-k-c0x00ffffff-no-rj-mo
-
         const getUserCampaigns = async () => {
             const provider = new ethers.providers.JsonRpcProvider();
             const contract = fetchContract(provider);
@@ -77,7 +72,6 @@ const fetchContract = (signerOrProvider) => new ethers.Contract(
                 method: 'eth_accounts',
             });
             const currentUser = accounts[0];
-            console.log(currentUser)
             const filterCampaigns = allCampaigns.filter((campaign) => 
             // campaign.owner === currentUser); //currentUser
             campaign.owner === '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266'); //currentUser
